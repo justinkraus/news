@@ -3,25 +3,37 @@
 <head>
 <style>
 	body {
-	margin: auto 8em;
+	margin: auto 2em;
+	text-align: center;
 	}
 	.tooltip {
     position: absolute;
 	}
 	#preamble{
-	padding-left: 40px;
+	padding-left: 50px;
+	}
+	.barChart{
+/*			position: relative;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);*/
 	}
 </style>
 </head>
 <body>
 	<div id ="preamble">
 		<h1>A Year of Scrolling</h1>
-		<h2>Tracking engagement on Google News by number of articles clicked</h2>
-		<svg width="877" height="50">
-  			<rect width="877" height="50" style="fill:#50BFE6;stroke-width:1;stroke:rgb(0,0,0)" />
+		<h3>Visualizing engagement with my Google News feed from February 2020-February 2021</h3>
+		<svg class="barChart" width="487.5" height="100">
+  			<rect width="487.5" height="50" style="fill:#50BFE6;stroke-width:1;stroke:rgb(0,0,0)" />
+  			<line x1="230" y1="60" x2="230" y2="55" stroke="black" />
+  			<text x="120" y="80">14147 Articles Not Clicked (97.5%)</text>
   		</svg>
-  		<svg width="23" height="50">
-			<rect width="23" height="50" style="fill:#FF00CC;stroke-width:1;stroke:rgb(0,0,0)" />
+  		<svg class="barChart" width="200" height="100">
+			<rect width="12.5" height="50" style="fill:#FF00CC;stroke-width:1;stroke:rgb(0,0,0)" />
+			<line x1="6" y1="60" x2="6" y2="55" stroke="black" />
+			<text x="0" y="80">358 Articles Clicked (2.5%)</text>
 		</svg>
 	</div>
 	<div id="my_dataviz"></div>
@@ -77,7 +89,7 @@ d3.text("./heatmap_data5.csv", function(text) {
 
   // Build Y scales and axis:
   var y = d3.scaleBand()
-    .range([ 0, height ])
+    .range([ height, 0 ])
     .domain(myVars)
     .padding(0.05);
   // svg.append("g")
@@ -116,8 +128,8 @@ d3.text("./heatmap_data5.csv", function(text) {
   var mousemove = function(d) {
     tooltip
       .html(d.Value)
-      .style("left", (d3.mouse(this)[0]+70) + "px")
-      .style("top", (d3.mouse(this)[1]) + "px")
+      .style("left", (d3.mouse(this)[0]) + "px")
+      .style("top", (d3.mouse(this)[1]+200) + "px")
   }
   var mouseleave = function(d) {
     tooltip
@@ -145,6 +157,8 @@ d3.text("./heatmap_data5.csv", function(text) {
     .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
+
+
 })
 
 // Add title to graph
