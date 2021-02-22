@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 <style>
 	body {
 	margin: auto 2em;
 	text-align: center;
 	justify-content: center;
-	background-color:black;
+	background-color:#121212;
+	font-family: 'Roboto', sans-serif;
 	}
 	.tooltip {
     position: absolute;
@@ -17,8 +20,10 @@
 	color:white;
 	}
 	.barChart{
-			position: relative;
-	left: 5%;
+	position: relative;
+	font-size: smaller;
+
+/*	left: 5%;*/
 /*	-webkit-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);*/
@@ -31,18 +36,30 @@
 <body>
 	<div id ="preamble">
 		<h1>A Year of Scrolling</h1>
-		<h3>Visualizing engagement with my Google News feed from February 2020-February 2021</h3>
-		<svg class="barChart" width="487.5" height="100">
-  			<rect width="487.5" height="50" style="fill:#50BFE6;stroke-width:1;stroke:rgb(0,0,0)" />
-  			<line x1="6" y1="60" x2="6" y2="55" stroke="white" />
-  			<text x="0" y="80">14147 (97.5%)</text>
-  			<text x="0" y="95">Articles Not Clicked </text>
+		<h3>Measuring engagement with my Google News feed from February 2020-February 2021</h3>
+		<svg class="barChart" width="100" height="60">
+			<rect width="100" height="60" style="fill:#121212;" />
+				<line x1="80" y1="26" x2="100" y2="26" stroke="white" />
+					<text x="10" y="15">14147 (97.5%)</text>
+			  		<text x="30" y="30">Articles</text>
+			  		<text x="20" y="45">Not Clicked</text>
+		</svg>
+		<svg class="barChart" width="487.5" height="60">
+  			<rect width="487.5" height="50" style="fill:#6200EE;" />
   		</svg>
-  		<svg class="barChart" width="200" height="100">
-			<rect width="12.5" height="50" style="fill:#FF00CC;stroke-width:1;stroke:rgb(0,0,0)" />
-			<line x1="6" y1="60" x2="6" y2="55" stroke="white" />
-			<text x="0" y="80">358 (2.5%)</text>
-			<text x="0" y="95">Articles Clicked</text>
+  		<svg class="barChart" width="12.5" height="60">
+			<rect width="12.5" height="50" style="fill:#03DAC5;" />
+		</svg>
+		<svg class="barChart" width="100" height="60">
+			<rect width="100" height="60" style="fill:#121212;" />
+				<line x1="0" y1="25" x2="16" y2="25" stroke="white" />
+					<text x="10" y="15">358 (2.5%)</text>
+					<text x="18" y="30">Articles</text>
+				  	<text x="18" y="45">Clicked</text>
+		</svg>
+		<br>
+		<svg width="100" height="5">
+		<line x1="0" y1="2.5" x2="500" y2="2.5" stroke="grey" />
 		</svg>
 		<h2>Begin February 2020</h2>
 		<p>Hover for Article Titles</p>
@@ -117,7 +134,7 @@ d3.text("./heatmap_data5.csv", function(text) {
 
   // Build color scale
   var myColor = d3.scaleLinear().domain([0,1])
-  .range(["#50BFE6", "#FF00CC"])
+  .range(["#6200EE", "#03DAC5"])
 
   // create a tooltip
   var tooltip = d3.select("#my_dataviz")
