@@ -8,8 +8,7 @@ Visualizing engagement with my google news feed from February 2020 to February 2
 ### Input
 I used [Google takeout](https://takeout.google.com/) to download my google news history. This provides a history of all activity within google news as an html file, here’s an example snapshot:
 
-<img src="googleNewsTakeout.png" height="50%" width="75%">
-GoogleNewsTakeout.png
+<img src="googleNewsTakeout.png" height="50%" width="50%">
 
 ### Output
 I used beautfiulsoup to scrape, formatted with pandas and output the data into a tabulated view that can be used for visualizing; the python script for that can be found here [google_news_scrape.py](https://github.com/justinkraus/news/blob/master/google_news_scrape.py). A view of the output is shown here
