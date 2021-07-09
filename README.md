@@ -1,6 +1,6 @@
 
 # A Year of Scrolling
-[Final Visualization](https://justinkraus.github.io/news/)
+### [Final Visualization](https://justinkraus.github.io/news/)
 
 Visualizing engagement with my google news feed from February 2020 to February 2021.
 
@@ -15,20 +15,21 @@ I used beautfiulsoup to scrape, formatted with pandas and output the data into a
 
 <img src="googleNewsTable.png" height="50%" width="75%">
 
-## Iteration One
+## Visualization
+### Iteration One
 
 My initial intention with this visualization was to observe daily ratios of the number of articles viewed to clicked. However it became clear that the ratio was pretty low with the exception of some outlier days that were skewing the results. This created an underwhelming heatmap, I created a version of this in d3 which can be seen here:
 
-<img src="heatmapDraft.png" height="50%" width="75%">
+<img src="heatmapDraft.png" height="50%" width="80%">
 
-## Iteration Two
+### Iteration Two
 
 I revisited the data and decided to both show more and less detail in the final version:
 
 -   Aggregate the information at the highest level for an overall ratio
 -   Show representations of each individual article
 
-<img src="finalNewsViz.png" height="50%" width="75%">
+<img src="finalNewsViz.png" height="50%" width="80%">
 
 
 ## Final Observations
